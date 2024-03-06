@@ -8,6 +8,7 @@ const resolvers = require('./resolvers');
 const Admin = require('./models/admin_model')
 const routers = require('./router/router');
 const bcrypt = require('bcrypt');
+require('dotenv').config();
 require('./connection');
 
 const app = express();
@@ -59,12 +60,11 @@ async function startApolloServer() {
 
 startApolloServer();
 
+const PORT = process.env.PORT;
 
-
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-//   console.log(`Server running at http://localhost:${PORT}${server.graphqlPath}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Graphql server listening on port ${PORT}`);
+});
 
 
 
