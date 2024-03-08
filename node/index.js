@@ -9,7 +9,6 @@ const Admin = require('./models/admin_model')
 const routers = require('./router/router');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
-const httpProxy = require('http-proxy');
 require('./connection');
 
 const app = express();
@@ -20,11 +19,6 @@ app.use(cors({
 }));
 app.use(express.json()); // Do this So that my server can accept json
 app.use(express.urlencoded({ extended: true }));
-const proxy = httpProxy.createProxyServer();
-
-app.all('/*', (req, res) => {
-  proxy.web(req, res, { target: 'http://104.236.193.57:4000' });
-});
 
 
 // Router for my uploads and stuffs
