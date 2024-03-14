@@ -13,11 +13,11 @@ const httpProxy = require('http-proxy');
 require('./connection');
 
 const app = express();
-app.use(cors({ 
-  origin: 'https://dailygracedevotional.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific methods
-  allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
-}));
+app.use(cors(
+  // origin: 'https://dailygracedevotional.vercel.app',
+  // methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific methods
+  // allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
+));
 app.use(express.json()); // Do this So that my server can accept json
 app.use(express.urlencoded({ extended: true }));
 const proxy = httpProxy.createProxyServer();
