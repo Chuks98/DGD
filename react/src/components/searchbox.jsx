@@ -39,7 +39,7 @@ const SearchBox = () => {
 
   return (
     <form className="max-w-6xl mx-auto flex justify-center items-center px-5">
-      <div style={{ backgroundColor: '#fff4', width: '300px', borderRadius: '5px', height: '50px' }}>
+      <div id='datepicker'>
         <DatePicker
           id='date-pick'
           selected={dates}
