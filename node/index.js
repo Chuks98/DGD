@@ -1,5 +1,5 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const { ApolloServer } = require('apollo-server-express');
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core');
 const { graphqlHTTP } = require('express-graphql'); // This one is for Express GraphQL
@@ -13,11 +13,11 @@ const httpProxy = require('http-proxy');
 require('./connection');
 
 const app = express();
-// app.use(cors({
-//   origin: 'http://104.236.193.57', // Replace with actual IP
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
-//   allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
-// }));
+app.use(cors({
+  origin: 'http://104.236.193.57', // Replace with actual IP
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
+}));
 app.use(express.json()); // Do this So that my server can accept json
 app.use(express.urlencoded({ extended: true }));
 const proxy = httpProxy.createProxyServer();
