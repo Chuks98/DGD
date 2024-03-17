@@ -80,17 +80,18 @@ function Header() {
   return (
     <header>
       <ToastContainer position="top-right" />
-      <div className="grid grid-cols-3 p-10 items-center">
+      <div id="header-container" className="items-center">
         <div className="logo-container">
           <img style={{width: '100%', height: '100%'}} src="/images/logo.jpeg"/>
         </div>
-        <Link style={{width: '100%'}} href="/" prefetch={false}>
+
+        <Link id="header-link" href="/" prefetch={false}>
           <p id="main-text" style={{fontFamily: 'arial', fontWeight: 'bold'}} className="font-serif text-4xl text-center">Daily Grace Devotional</p>
           <p id="sub-text">Meeting God Every Morning.</p>
         </Link>
 
-        <div className="flex items-center flex-wrap justify-end space-x-2 ml-20">
-          <div className="w-10 h-10 bg-E99C5E button flex items-center justify-center rounded-full cursor-pointer" onClick={toggleNotification}>
+        <div className="flex items-center flex-wrap">
+          <div style={{marginRight: '10px'}} className="w-10 h-10 bg-E99C5E button flex items-center justify-center rounded-full cursor-pointer" onClick={toggleNotification}>
             <FaBell className={`text-white ${jiggle ? 'jiggle' : ''}`} />
           </div>
           {/* <DarkModeButton /> */}
@@ -105,9 +106,7 @@ function Header() {
             (!loading && <a style={{lineHeight: '40px', padding: '0px 15px'}} className="md:inline button" onClick={handleLogout}>
               Logout
             </a>)
-          }
-          
-          
+          }  
         </div>
       </div>
       <NavLinks />

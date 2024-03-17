@@ -127,6 +127,13 @@ code {
 
 
 /* Header NavLinks */
+#header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+
 .logo-container {
   width: 100px;
   height: 100px;
@@ -218,6 +225,14 @@ code {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   height: 50px;
+}
+
+#datepicker-search-button {
+  padding: 0px 20px;
+  height: 50px;
+  line-height: 50px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px; 
 }
 
 
@@ -385,7 +400,10 @@ code {
   width: 300px;
   height: 50px;
   padding: 10px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid grey;
+  background-color: transparent;
 }
 
 #date-pick:active {
@@ -571,17 +589,21 @@ code {
 
 
 @media only screen and (max-width: 530px) {
-  /* For The Header Styling */
   body {
     padding: 0px 10px;
   }
 
-  header {
+  /* For The Header Styling */
+  /* header {
     width: 100%;
+  } */
+
+  #header-container #header-link {
+    margin-right: 20px;
   }
 
   .logo-container {
-    width: 70px;
+    width: 100px;
     height: 70px;
   }
 
@@ -594,8 +616,14 @@ code {
   }
 
   /* Date Picker or Search Box */
+  #date-pick,
   #datepicker {
     width: 150px;
+    font-size: 13px;
+    height: 45px;
+  }
+
+  #datepicker-search-button {
     height: 45px;
   }
 

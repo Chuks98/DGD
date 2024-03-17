@@ -49,11 +49,11 @@ const SearchBox = () => {
           yearDropdownItemNumber={40}
           scrollableYearDropdown
           showMonthDropdown
-          customInput={<CustomDateInput placeholderText="Click here to select devotion date!" />}
+          customInput={<CustomDateInput placeholderText="Click here to select date!" />}
         />
       </div>
 
-      <button onClick={handleSearch} style={{ padding: '0px 20px', height: '50px', lineHeight: '50px' }} className="button text-white-400">
+      <button id='datepicker-search-button' onClick={handleSearch} className="button text-white-400">
         Search
       </button>
     </form>
