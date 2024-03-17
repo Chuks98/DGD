@@ -14,7 +14,7 @@ require('./connection');
 
 const app = express();
 app.use(cors({
-  origin: 'http://104.236.193.57', // Replace with actual IP
+  origin: true, // Replace with actual IP
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
 }));
