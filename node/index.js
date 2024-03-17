@@ -1,5 +1,5 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const { ApolloServer } = require('apollo-server-express');
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core');
 const { graphqlHTTP } = require('express-graphql'); // This one is for Express GraphQL
@@ -9,22 +9,22 @@ const Admin = require('./models/admin_model')
 const routers = require('./router/router');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
-const httpProxy = require('http-proxy');
+// const httpProxy = require('http-proxy');
 require('./connection');
 
 const app = express();
-// app.use(cors({
-//   origin: 'http://104.236.193.57', // Replace with actual IP
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
-//   allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
-// }));
+app.use(cors({
+  origin: 'http://104.236.193.57', // Replace with actual IP
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
+}));
 app.use(express.json()); // Do this So that my server can accept json
 app.use(express.urlencoded({ extended: true }));
-const proxy = httpProxy.createProxyServer();
+// const proxy = httpProxy.createProxyServer();
 
-app.all('/*', (req, res) => {
-  proxy.web(req, res, { target: 'http://104.236.193.57:4000' });
-});
+// app.all('/*', (req, res) => {
+//   proxy.web(req, res, { target: 'http://104.236.193.57:4000' });
+// });
 
 
 // Router for my uploads and stuffs
