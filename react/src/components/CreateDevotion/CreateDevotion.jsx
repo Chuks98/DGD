@@ -16,7 +16,7 @@ const CustomDateInput = ({ value, onClick, placeholderText }) => (
     readOnly
     placeholder={placeholderText}
     onClick={onClick}
-    id='date-picker'
+    id='date-pick'
   />
 );
 
@@ -84,7 +84,7 @@ const CreateDevotion = () => {
   const handleCreatePost = async (e) => {
     e.preventDefault();
 
-    if (topic !== '' || text !== '' || audioName !== '' || imageName !== '' || date !== '') {
+    if (topic != '') {
       try {
         setCreating(true);
         const data = { topic, text, audioName, imageName, date };
@@ -98,33 +98,36 @@ const CreateDevotion = () => {
         console.log(response);
 
         if (response.data.data.createPost != null) {
-          if (audio !== null) {
+          if (audio != null) {
             const audioRecord = new FormData();
             audioRecord.append('audio', audio);
             await axios.post(`${config.API_URL}/sendAudio`, audioRecord).then((sendAudio) => {
               console.log(sendAudio.data);
+            }).catch(e => {
+              alert('Devotion created, but audio is not saved.');
             });
           }
 
-          if (thumbnail !== null) {
+          if (thumbnail != null) {
             const imageThumbnail = new FormData();
             imageThumbnail.append('thumbnail', thumbnail);
             await axios.post(`${config.API_URL}/sendThumbnail`, imageThumbnail).then((sendThumbnail) => {
               console.log(sendThumbnail.data);
+            }).catch(e => {
+              alert('Devotion created, but thumbnail is not saved.');
             });
           }
           alert('Devotion created successfully');
         } else if (response.data.data.createPost == null) {
-          alert('Error creating post. Please Try again later.');
+          alert('Error creating devotion. Please Try again later.');
         }
       } catch (error) {
-        alert('Error creating devotion. Please Try again later.');
         console.error('Error creating devotion:', error);
       } finally {
         setCreating(false);
       }
     } else {
-      alert('Please enter at least one field');
+      alert('Please enter at least the topic');
     }
   };
 
@@ -175,10 +178,10 @@ const CreateDevotion = () => {
         </div>
       )}
 
-      <div className='date-picker form-group'>
-        <label htmlFor='date-picker' className="block">Please Click Below To Select date</label>
+      <div id='date-picker' style={{margin: '30px 0px', padding: '0px'}}>
+        <label htmlFor='date-pick' className="block">Please Click Below To Select date</label>
         <DatePicker
-          id='date-picker'
+          id='date-pick'
           selected={dates}
           onChange={handleDateChange}
           dateFormat="MMM d, yyyy"

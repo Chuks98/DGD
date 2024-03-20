@@ -11,8 +11,8 @@ const getStorage = (destination) => {
   });
 };
 
-const devotionAudio = multer({ storage: getStorage('../public/devotion_audio') });
-const devotionThumbnail = multer({ storage: getStorage('../public/devotion_thumbnail') });
+const devotionAudio = multer({ storage: getStorage('.././react/public/devotion_audio') });
+const devotionThumbnail = multer({ storage: getStorage('.././react/public/devotion_thumbnail') });
 
 module.exports = {
     devotionAudio,

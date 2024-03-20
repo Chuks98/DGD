@@ -46,7 +46,7 @@ function Header() {
     toast.info(
       <div>
         <img src="/images/youtube-icon.png" alt="YouTube Icon" style={{ width: "30px", height: "30px", marginRight: "5px" }}/>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" style={{ color: "#E99C5E", fontSize: '13px' }}>
+        <a href="https://www.youtube.com/@dailygracedevotional" target="_blank" rel="noopener noreferrer" style={{ color: "#E99C5E", fontSize: '13px' }}>
           Click here to watch YouTube video.
         </a>
       </div>,
@@ -100,7 +100,7 @@ function Header() {
               Login
             </Link>)
           }
-          {loading && <p>Loading...</p>}
+          {loading && <p>processing...</p>}
 
           {isLoggedIn &&
             (!loading && <a style={{lineHeight: '40px', padding: '0px 15px'}} className="md:inline button" onClick={handleLogout}>

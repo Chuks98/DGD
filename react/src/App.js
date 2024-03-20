@@ -5,6 +5,7 @@ import './index.css';
 import Home from "./components/home";
 import Login from "./components/AdminLogin/AdminLogin";
 import CreateDevotion from "./components/CreateDevotion/CreateDevotion";
+import AboutPage from "./components/about";
 import Display from "./components/display/Display";
 import General from "./components/general/General";
 import GeneralDevotion from "./components/GeneralDevotions/GeneralDevotions";
@@ -23,6 +24,7 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/admin-login" element={<Login />} />
             <Route path="/add-devotion" element={<CreateDevotion />} />
             <Route path="/display/:id" element={<Display />} />

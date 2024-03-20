@@ -17,7 +17,7 @@ const CustomDateInput = ({ value, onClick, placeholderText }) => (
     readOnly
     placeholder={placeholderText}
     onClick={onClick}
-    id='date-picker'
+    id='date-pick'
   />
 );
 
@@ -70,7 +70,7 @@ const UpdateDevotion = () => {
       setAudioName(postData.audioName);
       setImageName(postData.imageName);
       const convertedDate = new Date(postData.date);
-      postData.date !== '' ? setDates(convertedDate) : setDates(null);
+      postData.date != '' ? setDates(convertedDate) : setDates(null);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching post data:', error);
@@ -114,7 +114,7 @@ const UpdateDevotion = () => {
   const handleUpdatePost = async (e) => {
     e.preventDefault();
 
-    if (topic !== '' || audioName !== '' || imageName !== '') {
+    if (topic != '' || audioName != '' || imageName != '') {
       try {
         setUpdating(true);
         const data = { postId, topic, text, audioName, imageName, date };
@@ -126,8 +126,8 @@ const UpdateDevotion = () => {
           },
         });
 
-        if (response.status === 200) {
-          if (audio !== null) {
+        if (response.status == 200) {
+          if (audio != null) {
             const audioRecord = new FormData();
             audioRecord.append('audio', audio);
             await axios.post(`${config.API_URL}/sendAudio`, audioRecord).then((sendAudio) => {
@@ -135,7 +135,7 @@ const UpdateDevotion = () => {
             });
           }
 
-          if (thumbnail !== null) {
+          if (thumbnail != null) {
             const imageThumbnail = new FormData();
             imageThumbnail.append('thumbnail', thumbnail);
             await axios.post(`${config.API_URL}/sendThumbnail`, imageThumbnail).then((sendThumbnail) => {
@@ -144,7 +144,7 @@ const UpdateDevotion = () => {
           }
           alert('Devotion updated successfully');
           setUpdating(false);
-        } else if (response.status === 400) {
+        } else if (response.status == 400) {
           alert('Error updating devotion. Please try again later.');
           setUpdating(false);
         }
@@ -217,15 +217,15 @@ const UpdateDevotion = () => {
       </div>
 
       <div style={{ width: '200px', height: '200px', marginTop: '10px' }}>
-        <img src={thumbnailPreview === undefined ? `/devotion_thumbnail/${imageName}` : thumbnailPreview} alt='Thumbnail Preview' style={{ width: '100%', height: '100%' }} />
+        <img src={thumbnailPreview == undefined ? `/devotion_thumbnail/${imageName}` : thumbnailPreview} alt='Thumbnail Preview' style={{ width: '100%', height: '100%' }} />
       </div>
 
-      <div className='date-picker form-group'>
-        <label htmlFor='date-picker' className='block'>
+      <div id='date-picker' style={{margin: '30px 0px', padding: '0px'}}>
+        <label htmlFor='date-pick' className='block'>
           Click Below To Update Date
         </label>
         <DatePicker
-          id='date-picker'
+          id='date-pick'
           selected={dates}
           onChange={handleDateChange}
           dateFormat='MMM d, yyyy'

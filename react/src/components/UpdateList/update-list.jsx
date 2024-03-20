@@ -58,7 +58,7 @@ const UpdateList = () => {
 
   const handleLinkClick = (index) => {
     // Set loading state for the clicked post to true
-    setLoadingStates((prevStates) => prevStates.map((state, i) => (i === index ? true : state)));
+    setLoadingStates((prevStates) => prevStates.map((state, i) => (i == index ? true : state)));
   };
 
   return (
@@ -93,7 +93,7 @@ const UpdateList = () => {
                 <Link
                   id='bottom-button'
                   onClick={() => handleLinkClick(index)}
-                  to={`/update/${post.id}`} // Adjust the 'to' prop based on your React Router setup
+                  to={`/update-devotion/${post.id}`} // Adjust the 'to' prop based on your React Router setup
                   style={{ textAlign: 'center' }}
                   className='button text-white py-2 px-4 rounded cursor-pointer'
                 >

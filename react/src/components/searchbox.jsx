@@ -30,10 +30,10 @@ const SearchBox = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (date === '') {
+    if (date == '') {
       alert('Please select a date');
     } else {
-        navigate(`/searchByDate/${date}`);
+        navigate(`/find-devotion-by-date/${date}`);
     }
   };
 

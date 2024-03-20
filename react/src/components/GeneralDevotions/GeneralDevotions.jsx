@@ -41,7 +41,7 @@ const GeneralDevotion = () => {
 
   const handleLinkClick = (index) => {
     setLoadingStates((prevStates) =>
-      prevStates.map((state, i) => (i === index ? true : state))
+      prevStates.map((state, i) => (i == index ? true : state))
     );
   };
 
@@ -89,7 +89,7 @@ const GeneralDevotion = () => {
                 <Link
                   id='bottom-button'
                   onClick={() => handleLinkClick(index)}
-                  href={`/display/${post.id}`}
+                  to={`/display/${post.id}`}
                   style={{ textAlign: 'center' }}
                   className='button text-white py-2 px-4 rounded cursor-pointer'
                 >

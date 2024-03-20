@@ -76,7 +76,7 @@ const Display = () => {
           <title>{topic}</title>
         </Head> */}
         <div style={{ width: '100%', margin: '20px 0px' }}>
-          <Link href={'/generalDevotion'} style={{ textAlign: 'center', padding: '10px' }} className="button text-white py-2 px-4 rounded cursor-pointer"> Go Back</Link>
+          <Link to={'/general-devotion'} style={{ textAlign: 'center', padding: '10px' }} className="button text-white py-2 px-4 rounded cursor-pointer">&#x2190; Go Back</Link>
         </div>
         <h2><b>Topic:</b> {topic}</h2>
         <div className="image-container">

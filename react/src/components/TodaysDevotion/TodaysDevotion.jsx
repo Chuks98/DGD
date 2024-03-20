@@ -43,7 +43,7 @@ const TodaysDevotion = () => {
 
       const postData = response.data.data.getPostByDate;
       console.log(postData);
-      if (postData == undefined) {
+      if (postData == undefined || null) {
         setDevotionAvailable(false);
       }
       setPostId(postData.id);

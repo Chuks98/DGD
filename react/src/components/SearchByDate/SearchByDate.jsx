@@ -10,19 +10,20 @@ const SearchByDate = () => {
   const [text, setText] = useState('');
   const [imageName, setImageName] = useState('');
   const [audioName, setAudioName] = useState('');
-  const [date, setDate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [devotionAvailable, setDevotionAvailable] = useState(true);
 
-//   const pathname = useParams();
-  const segments = window.location.pathname;
-  const dateInUrl = segments?.[segments.length - 1];
-  const cleanedDateInUrl = dateInUrl?.replace(/%20/g, ' ');
+  const {date} = useParams();
+  // const segments = window.location.pathname;
+  // const path = segments.split("/")[2]; // Get the part after the domain
+
+  // // Decode the URI component to get the actual date string
+  // const decodedPath = decodeURIComponent(path);
 
   useEffect(() => {
     // Fetch post data when component mounts
     getPostData();
-  }, []);
+  }, [date, topic]);
 
   const getPostData = async () => {
     try {
@@ -39,7 +40,7 @@ const SearchByDate = () => {
             }
           }
         `,
-        variables: { date: cleanedDateInUrl },
+        variables: { date: date },
       });
 
       const postData = response.data.data.getPostByDate;
@@ -52,15 +53,16 @@ const SearchByDate = () => {
       setText(postData.text);
       setAudioName(postData.audioName);
       setImageName(postData.imageName);
-      setDate(postData.date);
       setIsLoading(true);
+      setDevotionAvailable(true);
     } catch (error) {
       console.error('Error fetching post data:', error);
+    } finally {
+      window.location.reload;
     }
   };
 
   if (!devotionAvailable) {
-    alert('Sorry. No devotion available today');
     return (
       <>
         <div className="todays-devotion-container" style={{ width: '100%', textAlign: 'center' }}>Sorry. No devotion available today...</div>
@@ -71,7 +73,6 @@ const SearchByDate = () => {
   return (
     <>
       <div id="todaysDevotion" className="todays-devotion-container">
-        <h1>Today's Devotion</h1>
         <h2><b>Topic:</b> {topic}</h2>
         <div className="image-container">
           <img src={`/devotion_thumbnail/${imageName}`} alt={`Thumbnail for ${imageName}`} />

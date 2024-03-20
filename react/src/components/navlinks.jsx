@@ -33,7 +33,7 @@ function NavLinks() {
         <Link id="navlink" to="/general-devotion" className={"navlink font-bold text-lg"}>
           General Devotion
         </Link>
-        <Link id="navlink" to="/#about" className={"navlink font-bold text-lg"}>
+        <Link id="navlink" to="/about" className={"navlink font-bold text-lg"}>
           About Us
         </Link>
         {isLoggedIn && 

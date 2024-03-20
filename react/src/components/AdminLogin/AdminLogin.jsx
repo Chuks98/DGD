@@ -104,7 +104,7 @@ const Login = () => {
               Login
             </button>
           )}
-          {loading && <p>Loading...</p>}
+          {loading && <p>Logging In.</p>}
         </div>
       </div>
     </>

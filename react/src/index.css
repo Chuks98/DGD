@@ -46,6 +46,10 @@ hr {
   color: #ffffff;
 }
 
+hr {
+  width: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -413,6 +417,16 @@ code {
 
 
 
+/* Login Section */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background: transparent;
+  color: #f0f0f0;
+}
+
+
+
 
 /* This Is The Footer Section */
 
@@ -690,6 +704,8 @@ code {
   /* Center align the text in the input */
   .footer-container input {
     text-align: center;
+    color: #eee;
+    background-color: transparent;
   }
 
   /* Adjust padding and margin for better spacing on small screens */

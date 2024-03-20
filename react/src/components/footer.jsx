@@ -11,7 +11,7 @@ const Footer = () => {
 
     const subscribe = async (e) => {
         e.preventDefault();
-        if (email !== '') {
+        if (email != '') {
             if (email.includes('@')) {
                 setLoading(true);
                 const data = { email: email };
@@ -21,10 +21,10 @@ const Footer = () => {
                         variables: {emailSubscription: data}
                     });
 
-                    if (response.data.data.subscribe.email !== 'Duplicate email.') {
+                    if (response.data.data.subscribe.email != 'Duplicate email.') {
                         alert('Email successfully saved.');
                         setLoading(false);
-                    } else if (response.data.data.subscribe.email === 'Duplicate email.') {
+                    } else if (response.data.data.subscribe.email == 'Duplicate email.') {
                         alert('Email already exists.');
                         setLoading(false);
                     } else {
