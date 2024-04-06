@@ -40,7 +40,7 @@ const Footer = () => {
                 alert('Invalid email. Please check your email and try again.');
             }
         } else {
-            alert('Please Enter Your Email.');
+            alert('Please Enter Your Email Here.');
         }
     };
 
