@@ -10,7 +10,7 @@ const getStorage = (destination) => {
     },
   });
 };
-
+console.log("GOT HERE NAA");
 const devotionAudio = multer({ storage: getStorage('../../react/public/devotion_audio') });
 const devotionThumbnail = multer({ storage: getStorage('../../react/public/devotion_thumbnail') });
 
