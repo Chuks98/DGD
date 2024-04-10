@@ -239,7 +239,7 @@ const UpdateDevotion = () => {
 
       {!updating && (
         <button type='submit' onClick={handleUpdatePost} className='button text-white py-2 px-4 rounded focus:outline-none mt-4'>
-          Update Post
+          Update Devotion
         </button>
       )}
       {updating && <p>Updating devotion...</p>}

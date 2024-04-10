@@ -10,9 +10,9 @@ const getStorage = (destination) => {
     },
   });
 };
-console.log("GOT HERE NAA");
-const devotionAudio = multer({ storage: getStorage('../../../../react/public/devotion_audio') });
-const devotionThumbnail = multer({ storage: getStorage('../../../../react/public/devotion_thumbnail') });
+
+const devotionAudio = multer({ storage: getStorage('../../../../react/public/tion_audio') });
+const devotionThumbnail = multer({ storage: getStorage('../../../../react/public/tion_thumbnail') });
 
 module.exports = {
     devotionAudio,

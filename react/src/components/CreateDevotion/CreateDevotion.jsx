@@ -194,7 +194,7 @@ const CreateDevotion = () => {
       </div>
 
       {!creating && <button type="submit" onClick={handleCreatePost} className="button text-white py-2 px-4 rounded focus:outline-none mt-4">
-        Create Post
+        Create Devotion
       </button>}
       {creating && <p>Creating devotion...</p>}
     </div>
