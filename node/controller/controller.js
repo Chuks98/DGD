@@ -1,4 +1,4 @@
-import { devotionAudio, devotionThumbnail } from '../config/multer_config';
+const { devotionAudio, devotionThumbnail } = require('../config/multer_config');
 
 const sendAudio = (req, res) => {
   // Assuming you have a field named 'audio' in your form
