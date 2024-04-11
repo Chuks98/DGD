@@ -1,9 +1,10 @@
-const { devotionAudio, devotionThumbnail } = require('../config/multer_config');
+var { devotionAudio, devotionThumbnail } = require('../config/multer_config');
 
 const sendAudio = (req, res) => {
   // Assuming you have a field named 'audio' in your form
   devotionAudio.single('audio')(req, res, (err) => {
     if (err) {
+      console.log(req)
       // Handle Multer error (e.g., file type not allowed)
       console.error('Error uploading audio:', err);
       return res.status(400).send('Error uploading audio');
