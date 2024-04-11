@@ -6,7 +6,7 @@ const sendAudio = (req, res) => {
     if (err) {
       console.log("This is the request", req)
       // Handle Multer error (e.g., file type not allowed)
-      console.error('Error uploading audio:', err);
+      console.error('Error uploading the mafisticated nonsensicated audio:', err);
       return res.status(400).send('Error uploading audio');
     }
 
