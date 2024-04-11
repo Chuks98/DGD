@@ -1,9 +1,10 @@
 const multer = require('multer');
+const path = require('path');
 
 const getStorage = (destination) => {
   return multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, destination); // Set the destination folder for uploaded files
+      cb(null, path.join(__dirname, destination)); // Use absolute path
     },
     filename: function (req, file, cb) {
       cb(null, file.originalname); // Set the filename for uploaded files
@@ -11,8 +12,8 @@ const getStorage = (destination) => {
   });
 };
 
-const devotionAudio = multer({ storage: getStorage('../../../../react/public/tion_audio') });
-const devotionThumbnail = multer({ storage: getStorage('../../../../react/public/tion_thumbnail') });
+const devotionAudio = multer({ storage: getStorage('.././react/public/devotion_audio') });
+const devotionThumbnail = multer({ storage: getStorage('.././react/public/devotion_thumbnail') });
 
 module.exports = {
     devotionAudio,
