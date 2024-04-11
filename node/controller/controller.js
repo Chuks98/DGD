@@ -34,4 +34,4 @@ const sendThumbnail = (req, res) => {
     });
   };
 
-  module.exports = { sendAudio, sendThumbnail };
+module.exports = { sendAudio, sendThumbnail };
