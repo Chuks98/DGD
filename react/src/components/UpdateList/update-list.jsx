@@ -50,6 +50,7 @@ const UpdateList = () => {
 
       setLoadingStates(new Array(response.data.data.posts.length).fill(false));
       setPosts(response.data.data.posts);
+      console.log(response.data.data.posts);
       setOffset(currentOffset + limit);
     } catch (error) {
       console.error('Error fetching all posts:', error);
