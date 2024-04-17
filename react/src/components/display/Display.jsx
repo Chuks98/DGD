@@ -80,12 +80,12 @@ const Display = () => {
         </div>
         <h2><b>Topic:</b> {topic}</h2>
         <div className="image-container">
-          <img src={process.env.PUBLIC_URL + `/devotion_thumbnail/${imageName}`} alt={`Thumbnail for ${imageName}`} />
+          <img src={`${config.BASE_URL}/devotion_thumbnail/${imageName}`} alt={`Thumbnail for ${imageName}`} />
         </div>
 
         {isLoading &&
           <audio style={{ marginTop: '30px' }} controls>
-            <source src={process.env.PUBLIC_URL + `/devotion_audio/${audioName}`} type="audio/mp3" />
+            <source src={`${config.BASE_URL}/devotion_audio/${audioName}`} type="audio/mp3" />
             Your browser does not support the audio element.
           </audio>
         }

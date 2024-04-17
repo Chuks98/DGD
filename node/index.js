@@ -9,6 +9,7 @@ const Admin = require('./models/admin_model')
 const routers = require('./router/router');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
+const path = require('path');
 // const httpProxy = require('http-proxy');
 require('./connection');
 
@@ -29,6 +30,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Router for my uploads and stuffs
 app.use('/', routers);
+app.use('/devotion_thumbnail', express.static(path.join(__dirname, '../react/build/devotion_thumbnail')));
+app.use('/devotion_audio', express.static(path.join(__dirname, '../react/build/devotion_audio')));
 
 
 

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import config from "../../config";
 
 
-
 const UpdateList = () => {
   const [posts, setPosts] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -71,7 +70,7 @@ const UpdateList = () => {
             <div key={post.id} id='post-container'>
               {/* Thumbnail */}
               <div className='image-box'>
-                <img src={`/devotion_thumbnail/${post.imageName}`} alt={`Thumbnail for ${post.imageName}`} />
+                <img src={`${config.BASE_URL}/devotion_thumbnail/${post.imageName}`} alt={`Thumbnail for ${post.imageName}`} />
               </div>
 
               {/* Topic */}
@@ -82,7 +81,7 @@ const UpdateList = () => {
 
               {/* Audio */}
               <audio style={{ width: '100%', height: '50px' }} controls className='mb-2'>
-                <source src={`/devotion_audio/${post.audioName}`} type='audio/mp3' />
+                <source src={`${config.BASE_URL}/devotion_audio/${post.audioName}`} type='audio/mp3' />
                 Your browser does not support the audio element.
               </audio>
 
