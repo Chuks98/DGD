@@ -204,7 +204,7 @@ const UpdateDevotion = () => {
 
       <div style={{ marginTop: '10px' }}>
         <audio controls>
-          <source src={audioPrelisten || `/devotion_audio/${audioName}`} type='audio/mp3' />
+          <source src={audioPrelisten || (process.env.PUBLIC_URL + `/devotion_audio/${audioName}`)} type='audio/mp3' />
           Your browser does not support the audio tag.
         </audio>
       </div>
@@ -217,7 +217,7 @@ const UpdateDevotion = () => {
       </div>
 
       <div style={{ width: '200px', height: '200px', marginTop: '10px' }}>
-        <img src={thumbnailPreview == undefined ? `/devotion_thumbnail/${imageName}` : thumbnailPreview} alt='Thumbnail Preview' style={{ width: '100%', height: '100%' }} />
+        <img src={thumbnailPreview == undefined ? (process.env.PUBLIC_URL + `/devotion_thumbnail/${imageName}`) : thumbnailPreview} alt='Thumbnail Preview' style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div id='date-picker' style={{margin: '30px 0px', padding: '0px'}}>

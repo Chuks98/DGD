@@ -55,7 +55,7 @@ const GeneralDevotion = () => {
             <div key={post.id} id='post-container'>
               <div className='image-box'>
                 <img
-                  src={`/devotion_thumbnail/${post.imageName}`}
+                  src={process.env.PUBLIC_URL + `/devotion_thumbnail/${post.imageName}`}
                   alt={`Thumbnail for ${post.topic}`}
                 />
               </div>
@@ -76,7 +76,7 @@ const GeneralDevotion = () => {
                 className='mb-2'
               >
                 <source
-                  src={`/devotion_audio/${post.audioName}`}
+                  src={process.env.PUBLIC_URL + `/devotion_audio/${post.audioName}`}
                   type='audio/mp3'
                 />
                 Your browser does not support the audio element.

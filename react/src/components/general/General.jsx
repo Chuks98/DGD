@@ -76,7 +76,7 @@ const General = () => {
             <h1>{devotion.topic}</h1>
             <div className='image-box'>
               <img
-                src={`/devotion_thumbnail/${devotion.imageName}`}
+                src={process.env.PUBLIC_URL + `/devotion_thumbnail/${devotion.imageName}`}
                 alt={`Thumbnail for ${devotion.topic}`}
               />
             </div>
