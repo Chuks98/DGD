@@ -71,7 +71,7 @@ const UpdateList = () => {
             <div key={post.id} id='post-container'>
               {/* Thumbnail */}
               <div className='image-box'>
-                <img src={process.env.PUBLIC_URL + `/devotion_thumbnail/${post.imageName}`} alt={`Thumbnail for ${post.topic}`} />
+                <img src={process.env.PUBLIC_URL + `/devotion_thumbnail/${post.imageName}`} alt={`Thumbnail for ${post.imageName}`} />
               </div>
 
               {/* Topic */}

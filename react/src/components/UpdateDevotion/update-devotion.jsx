@@ -197,7 +197,7 @@ const UpdateDevotion = () => {
 
       <div className='form-group'>
         <label htmlFor='audio' className='block'>
-          Change Audio: <span style={{ fontSize: '14px' }}>(Audio Supported*)</span>
+          Change Audio: <span style={{ fontSize: '14px' }}>(Audio Supported - MP3 only.*)</span>
         </label>
         <input id='audio' type='file' accept='audio/*' onChange={handleAudioChange} className='mt-1' />
       </div>

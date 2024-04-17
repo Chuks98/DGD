@@ -154,7 +154,7 @@ const CreateDevotion = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="audio" className="block">Choose Audio: <span style={{ fontSize: '14px' }}>(Audio Supported*)</span></label>
+        <label htmlFor="audio" className="block">Choose Audio: <span style={{ fontSize: '14px' }}>(Audio Supported - MP3 only.*)</span></label>
         <input id="audio" type="file" accept="audio/*" onChange={handleAudioChange} className="mt-1" />
       </div>
 
