@@ -32,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', routers);
 app.use('/devotion_thumbnail', express.static(path.join(__dirname, '../react/build/devotion_thumbnail')));
 app.use('/devotion_audio', express.static(path.join(__dirname, '../react/build/devotion_audio')));
+console.log("Current SERVER directory", __dirname);
 
 
 
